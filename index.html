@@ -5,76 +5,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Аудит продаж ВК — Infinitive Camp — Февраль 2026</title>
 <style>
-:root{--bg:#0D0B0E;--card:#1A1620;--card2:#231E2A;--gold:#C9A44C;--green:#3DB86A;--red:#D44040;--blue:#4A8FE0;--orange:#E8913A;--purple:#9B6FE8;--cyan:#4ACAC0;--text:#E8E4ED;--text2:#A09BAA;--border:#2E2838;--warm:#E8913A;--cold:#4A8FE0}
+:root{--primary:#7468ff;--primary-deep:#4f39eb;--primary-light:#e8e4ff;--primary-ultra-light:#f5f2ff;--accent:#97eef7;--bg:#f5f4fa;--bg-alt:#eeedf8;--bg-warm:#f8f6ff;--card:rgba(255,255,255,0.88);--card2:#eeedf8;--text:#17162b;--text2:#5e6276;--text3:#9094aa;--border:#dfddee;--border-light:#ebe9f6;--green:#34b06a;--red:#e04040;--blue:#4a8fe0;--orange:#e8913a;--purple:#9b8fff;--cyan:#2bb5b0;--warm:#e8913a;--cold:#4a8fe0}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:20px}
+body{background:radial-gradient(circle at top right,rgba(151,238,247,0.18),transparent 28%),radial-gradient(circle at 15% 20%,rgba(116,104,255,0.1),transparent 30%),linear-gradient(180deg,#fcfbff 0%,var(--bg) 38%,#f1eff9 100%);color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:20px;-webkit-font-smoothing:antialiased;min-height:100vh}
 .container{max-width:1200px;margin:0 auto}
-h1{font-size:28px;color:var(--gold);margin-bottom:8px}
-h2{font-size:22px;color:var(--gold);margin:40px 0 16px;border-bottom:1px solid var(--border);padding-bottom:8px}
-h3{font-size:18px;color:var(--text);margin:24px 0 12px}
+.header{display:flex;align-items:center;gap:24px;margin-bottom:12px}
+.logo svg{height:40px}
+h1{font-size:28px;color:var(--primary);font-weight:800;letter-spacing:-0.02em}
+h2{font-size:22px;color:var(--primary);margin:40px 0 16px;border-bottom:1px solid var(--border);padding-bottom:8px;font-weight:700}
+h3{font-size:18px;color:var(--text);margin:24px 0 12px;font-weight:700}
 .subtitle{color:var(--text2);font-size:14px;margin-bottom:30px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:16px 0}
 .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin:16px 0}
-.card{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border)}
+.card{background:var(--card);border-radius:16px;padding:20px;border:1px solid var(--border-light);box-shadow:0 18px 42px rgba(23,22,43,0.04),inset 0 1px 0 rgba(255,255,255,0.45);backdrop-filter:blur(14px);transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
+.card:hover{border-color:rgba(116,104,255,0.18);box-shadow:0 24px 56px rgba(79,57,235,0.08);transform:translateY(-2px)}
 .metric{text-align:center}
-.metric .value{font-size:36px;font-weight:700}
+.metric .value{font-size:36px;font-weight:800}
 .metric .label{font-size:13px;color:var(--text2);margin-top:4px}
 .metric.green .value{color:var(--green)}
 .metric.red .value{color:var(--red)}
-.metric.gold .value{color:var(--gold)}
+.metric.gold .value{color:var(--primary)}
 .metric.blue .value{color:var(--blue)}
 .metric.orange .value{color:var(--orange)}
 .metric.purple .value{color:var(--purple)}
 .metric.cyan .value{color:var(--cyan)}
 table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
-th{background:var(--card2);color:var(--gold);padding:10px 8px;text-align:left;font-weight:600;position:sticky;top:0}
-td{padding:8px;border-bottom:1px solid var(--border);vertical-align:top}
-tr:hover td{background:var(--card2)}
-.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
-.tag-green{background:rgba(61,184,106,0.15);color:var(--green)}
-.tag-red{background:rgba(212,64,64,0.15);color:var(--red)}
-.tag-orange{background:rgba(232,145,58,0.15);color:var(--orange)}
-.tag-blue{background:rgba(74,143,224,0.15);color:var(--blue)}
-.tag-purple{background:rgba(155,111,232,0.15);color:var(--purple)}
-.tag-gray{background:rgba(160,155,170,0.15);color:var(--text2)}
-.tag-cyan{background:rgba(74,202,192,0.15);color:var(--cyan)}
-.tag-warm{background:rgba(232,145,58,0.2);color:var(--warm);border:1px solid rgba(232,145,58,0.3)}
-.tag-cold{background:rgba(74,143,224,0.2);color:var(--cold);border:1px solid rgba(74,143,224,0.3)}
-.flag{background:rgba(212,64,64,0.1);border-left:3px solid var(--red);padding:8px 12px;margin:4px 0;border-radius:0 6px 6px 0;font-size:12px;color:var(--red)}
-.insight{background:rgba(74,143,224,0.1);border-left:3px solid var(--blue);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-.insight-warn{background:rgba(232,145,58,0.1);border-left:3px solid var(--orange);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-.insight-good{background:rgba(61,184,106,0.1);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-.insight-critical{background:rgba(212,64,64,0.1);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0}
-.quote{background:var(--card2);padding:12px 16px;border-radius:8px;margin:8px 0;font-style:italic;color:var(--text2);border-left:3px solid var(--purple)}
+th{background:var(--primary-light);color:var(--primary-deep);padding:10px 8px;text-align:left;font-weight:700;position:sticky;top:0}
+td{padding:8px;border-bottom:1px solid var(--border-light);vertical-align:top}
+tr:hover td{background:var(--primary-ultra-light)}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700}
+.tag-green{background:rgba(52,176,106,0.12);color:var(--green)}
+.tag-red{background:rgba(224,64,64,0.1);color:var(--red)}
+.tag-orange{background:rgba(232,145,58,0.12);color:var(--orange)}
+.tag-blue{background:rgba(74,143,224,0.12);color:var(--blue)}
+.tag-purple{background:rgba(116,104,255,0.12);color:var(--primary)}
+.tag-gray{background:rgba(94,98,118,0.1);color:var(--text2)}
+.tag-cyan{background:rgba(43,181,176,0.12);color:var(--cyan)}
+.tag-warm{background:rgba(232,145,58,0.15);color:var(--warm);border:1px solid rgba(232,145,58,0.25)}
+.tag-cold{background:rgba(74,143,224,0.15);color:var(--cold);border:1px solid rgba(74,143,224,0.25)}
+.flag{background:rgba(224,64,64,0.06);border-left:3px solid var(--red);padding:8px 12px;margin:4px 0;border-radius:0 10px 10px 0;font-size:12px;color:var(--red)}
+.insight{background:rgba(116,104,255,0.06);border-left:3px solid var(--primary);padding:12px 16px;margin:12px 0;border-radius:0 12px 12px 0}
+.insight-warn{background:rgba(232,145,58,0.06);border-left:3px solid var(--orange);padding:12px 16px;margin:12px 0;border-radius:0 12px 12px 0}
+.insight-good{background:rgba(52,176,106,0.06);border-left:3px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 12px 12px 0}
+.insight-critical{background:rgba(224,64,64,0.06);border-left:3px solid var(--red);padding:12px 16px;margin:12px 0;border-radius:0 12px 12px 0}
+.quote{background:var(--card2);padding:12px 16px;border-radius:10px;margin:8px 0;font-style:italic;color:var(--text2);border-left:3px solid var(--purple)}
 .funnel-bar{display:flex;align-items:center;margin:6px 0}
-.funnel-bar .label{width:200px;font-size:13px;text-align:right;padding-right:12px}
-.funnel-bar .bar{height:32px;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:600;color:#fff;min-width:40px}
+.funnel-bar .label{width:200px;font-size:13px;text-align:right;padding-right:12px;color:var(--text2)}
+.funnel-bar .bar{height:32px;border-radius:8px;display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:700;color:#fff;min-width:40px}
 .funnel-bar .count{margin-left:8px;font-size:13px;color:var(--text2)}
 .warm-card{border-left:3px solid var(--warm)}
 .cold-card{border-left:3px solid var(--cold)}
-.toc{background:var(--card);border-radius:12px;padding:20px 24px;margin:20px 0;border:1px solid var(--border)}
-.toc a{color:var(--blue);text-decoration:none;font-size:14px;display:block;padding:4px 0}
-.toc a:hover{color:var(--gold)}
-.product-card{background:var(--card2);border-radius:8px;padding:16px;border-left:3px solid var(--gold)}
-.product-card .price{font-size:24px;font-weight:700;color:var(--gold)}
-.product-card .days{color:var(--cyan);font-weight:600}
-.temp-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600}
-.temp-warm{background:rgba(232,145,58,0.15);color:var(--warm);border:1px solid rgba(232,145,58,0.3)}
-.temp-cold{background:rgba(74,143,224,0.15);color:var(--cold);border:1px solid rgba(74,143,224,0.3)}
-svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
-@media(max-width:768px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+.toc{background:var(--card);border-radius:16px;padding:20px 24px;margin:20px 0;border:1px solid var(--border-light);box-shadow:0 12px 30px rgba(23,22,43,0.04)}
+.toc a{color:var(--primary);text-decoration:none;font-size:14px;display:block;padding:4px 0;transition:color 0.2s}
+.toc a:hover{color:var(--primary-deep)}
+.product-card{background:var(--card2);border-radius:12px;padding:16px;border-left:3px solid var(--primary)}
+.product-card .price{font-size:24px;font-weight:800;color:var(--primary)}
+.product-card .days{color:var(--cyan);font-weight:700}
+.temp-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700}
+.temp-warm{background:rgba(232,145,58,0.12);color:var(--warm);border:1px solid rgba(232,145,58,0.2)}
+.temp-cold{background:rgba(74,143,224,0.12);color:var(--cold);border:1px solid rgba(74,143,224,0.2)}
+svg text{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+::selection{background:var(--primary-light);color:var(--primary-deep)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg-alt)}
+::-webkit-scrollbar-thumb{background:var(--primary-light);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--primary)}
+@media(max-width:768px){.grid2,.grid3,.grid4{grid-template-columns:1fr}.header{flex-direction:column;align-items:flex-start;gap:12px}}
 </style>
 </head>
 <body>
 <div class="container">
+
+<div class="header">
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48">
+            <text x="0" y="28" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="30" fill="#735DFF" letter-spacing="3">ESPACE</text>
+            <text x="0" y="45" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#735DFF" letter-spacing="6" opacity="0.7">AGENCY</text>
+        </svg>
+    </div>
+</div>
 
 <h1>Аудит продаж ВКонтакте — Infinitive Camp</h1>
 <p class="subtitle">Февраль 2026 | 27 диалогов | 216 сообщений | VK Messages API<br>
 Дата отчёта: 4 марта 2026 | v2 — с сегментацией по температуре лидов</p>
 
 <div class="toc">
-<b style="color:var(--gold)">Содержание</b>
+<b style="color:var(--primary)">Содержание</b>
 <a href="#s1">1. Executive Summary</a>
 <a href="#s2">2. Сегментация: тёплые vs холодные лиды</a>
 <a href="#s3">3. Тёплые лиды — детальный разбор</a>
@@ -163,15 +180,15 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
     <h3>Разбивка февраля</h3>
     <svg viewBox="0 0 800 60" style="width:100%">
         <!-- warm -->
-        <rect x="0" y="5" width="233" height="50" rx="8" fill="rgba(232,145,58,0.2)" stroke="var(--warm)" stroke-width="1.5"/>
+        <rect x="0" y="5" width="233" height="50" rx="10" fill="rgba(232,145,58,0.12)" stroke="var(--warm)" stroke-width="1.5"/>
         <text x="116" y="35" text-anchor="middle" fill="var(--warm)" font-size="14" font-weight="700">Тёплые: 7 (4 VK + 3 формы)</text>
         <!-- cold -->
-        <rect x="243" y="5" width="437" height="50" rx="8" fill="rgba(74,143,224,0.2)" stroke="var(--cold)" stroke-width="1.5"/>
+        <rect x="243" y="5" width="437" height="50" rx="10" fill="rgba(74,143,224,0.12)" stroke="var(--cold)" stroke-width="1.5"/>
         <text x="462" y="35" text-anchor="middle" fill="var(--cold)" font-size="14" font-weight="700">Холодные: 15</text>
         <!-- not leads -->
-        <rect x="690" y="5" width="105" height="50" rx="8" fill="rgba(160,155,170,0.15)" stroke="var(--text2)" stroke-width="1"/>
-        <text x="742" y="30" text-anchor="middle" fill="var(--text2)" font-size="11" font-weight="600">Не лиды</text>
-        <text x="742" y="45" text-anchor="middle" fill="var(--text2)" font-size="11">5</text>
+        <rect x="690" y="5" width="105" height="50" rx="10" fill="rgba(94,98,118,0.08)" stroke="var(--text3)" stroke-width="1"/>
+        <text x="742" y="30" text-anchor="middle" fill="var(--text3)" font-size="11" font-weight="600">Не лиды</text>
+        <text x="742" y="45" text-anchor="middle" fill="var(--text3)" font-size="11">5</text>
     </svg>
 </div>
 
@@ -257,27 +274,27 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
 
     <div class="funnel-bar">
         <div class="label">Входящий запрос</div>
-        <div class="bar" style="width:100.0%;background:#4A8FE0">15</div>
+        <div class="bar" style="width:100%;background:var(--blue)">15</div>
         <div class="count">100%</div>
     </div>
     <div class="funnel-bar">
         <div class="label">Квалификация / диалог начат</div>
-        <div class="bar" style="width:86.66666666666667%;background:#9B6FE8">13</div>
+        <div class="bar" style="width:86.7%;background:var(--purple)">13</div>
         <div class="count">87%</div>
     </div>
     <div class="funnel-bar">
         <div class="label">Презентация отправлена</div>
-        <div class="bar" style="width:40.0%;background:#4ACAC0">6</div>
+        <div class="bar" style="width:40%;background:var(--cyan)">6</div>
         <div class="count">40%</div>
     </div>
     <div class="funnel-bar">
         <div class="label">Горячий (обсуждение деталей)</div>
-        <div class="bar" style="width:20.0%;background:#E8913A">3</div>
+        <div class="bar" style="width:20%;background:var(--orange)">3</div>
         <div class="count">20%</div>
     </div>
     <div class="funnel-bar">
         <div class="label">Бронь / оплата</div>
-        <div class="bar" style="width:2%;background:#3DB86A">0</div>
+        <div class="bar" style="width:2%;background:var(--green)">0</div>
         <div class="count">0%</div>
     </div>
 </div>
@@ -320,21 +337,21 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
 </div>
 <h2 id="s5">5. Продуктовая линейка (лето 2026)</h2><div class="grid3">
     <div class="card product-card">
-        <h3 style="margin:0 0 8px;color:var(--gold)">Пионер</h3>
+        <h3 style="margin:0 0 8px;color:var(--primary)">Пионер</h3>
         <div class="days">21 дней</div>
         <div style="font-size:12px;color:var(--text2);margin:4px 0">ДОЛ «Пионер», Лемболовское озеро</div>
         <div class="price">85,500₽</div>
         <div style="font-size:12px;color:var(--text2)">раннее бронирование до 28.02<br><span style="color:var(--green);font-size:12px">+ Сертификат СПб</span></div>
     </div>
     <div class="card product-card">
-        <h3 style="margin:0 0 8px;color:var(--gold)">Репино</h3>
+        <h3 style="margin:0 0 8px;color:var(--primary)">Репино</h3>
         <div class="days">14 дней</div>
         <div style="font-size:12px;color:var(--text2);margin:4px 0">Курортный р-н СПб</div>
         <div class="price">92,000₽</div>
         <div style="font-size:12px;color:var(--text2)">раннее бронирование до 28.02<br><span style="color:var(--text2);font-size:12px">с 1 марта: 95,000₽</span></div>
     </div>
     <div class="card product-card">
-        <h3 style="margin:0 0 8px;color:var(--gold)">Золотая Долина</h3>
+        <h3 style="margin:0 0 8px;color:var(--primary)">Золотая Долина</h3>
         <div class="days">10 дней</div>
         <div style="font-size:12px;color:var(--text2);margin:4px 0">Коробицыно</div>
         <div class="price">102,000₽</div>
@@ -346,20 +363,20 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
         <h3><span class="temp-badge temp-warm" style="font-size:11px">ТЁПЛЫЕ</span> Время ответа</h3>
 <div style="display:flex;align-items:center;margin:4px 0">
         <div style="width:160px;font-size:12px;text-align:right;padding-right:8px;color:var(--text2)">Олег Пятаев</div>
-        <div style="height:18px;width:0.62%;background:#3DB86A;border-radius:4px;min-width:30px"></div>
-        <span style="margin-left:8px;font-size:12px;color:#3DB86A;font-weight:600">2 мин</span>
+        <div style="height:18px;width:0.62%;background:var(--green);border-radius:6px;min-width:30px"></div>
+        <span style="margin-left:8px;font-size:12px;color:var(--green);font-weight:700">2 мин</span>
     </div><div style="display:flex;align-items:center;margin:4px 0">
         <div style="width:160px;font-size:12px;text-align:right;padding-right:8px;color:var(--text2)">Екатерина Барышникова</div>
-        <div style="height:18px;width:1.7399999999999998%;background:#3DB86A;border-radius:4px;min-width:30px"></div>
-        <span style="margin-left:8px;font-size:12px;color:#3DB86A;font-weight:600">6 мин</span>
+        <div style="height:18px;width:1.74%;background:var(--green);border-radius:6px;min-width:30px"></div>
+        <span style="margin-left:8px;font-size:12px;color:var(--green);font-weight:700">6 мин</span>
     </div><div style="display:flex;align-items:center;margin:4px 0">
         <div style="width:160px;font-size:12px;text-align:right;padding-right:8px;color:var(--text2)">Елена Тимофеева</div>
-        <div style="height:18px;width:56.445%;background:#D44040;border-radius:4px;min-width:30px"></div>
-        <span style="margin-left:8px;font-size:12px;color:#D44040;font-weight:600">3.1 ч</span>
+        <div style="height:18px;width:56.4%;background:var(--red);border-radius:6px;min-width:30px"></div>
+        <span style="margin-left:8px;font-size:12px;color:var(--red);font-weight:700">3.1 ч</span>
     </div><div style="display:flex;align-items:center;margin:4px 0">
         <div style="width:160px;font-size:12px;text-align:right;padding-right:8px;color:var(--text2)">Оксана Дюбкова</div>
-        <div style="height:18px;width:99.29%;background:#D44040;border-radius:4px;min-width:30px"></div>
-        <span style="margin-left:8px;font-size:12px;color:#D44040;font-weight:600">5.5 ч</span>
+        <div style="height:18px;width:99.3%;background:var(--red);border-radius:6px;min-width:30px"></div>
+        <span style="margin-left:8px;font-size:12px;color:var(--red);font-weight:700">5.5 ч</span>
     </div>
         <div class="insight-good" style="margin-top:8px;font-size:12px">
             Медиана: <b>15 мин</b>. Пятаев и Барышникова — менее 6 мин. Отлично.
@@ -369,64 +386,64 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
         <h3><span class="temp-badge temp-cold" style="font-size:11px">ХОЛОДНЫЕ</span> Время ответа</h3>
 <div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Оля Золотарёва</div>
-        <div style="height:16px;width:0.05636363636363636%;background:#3DB86A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#3DB86A;font-weight:600">31 сек</span>
+        <div style="height:16px;width:0.06%;background:var(--green);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--green);font-weight:700">31 сек</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Татьяна Покровская</div>
-        <div style="height:16px;width:0.16727272727272727%;background:#3DB86A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#3DB86A;font-weight:600">2 мин</span>
+        <div style="height:16px;width:0.17%;background:var(--green);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--green);font-weight:700">2 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Галина Широбокова</div>
-        <div style="height:16px;width:0.22181818181818183%;background:#3DB86A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#3DB86A;font-weight:600">2 мин</span>
+        <div style="height:16px;width:0.22%;background:var(--green);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--green);font-weight:700">2 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Евгения Савельева</div>
-        <div style="height:16px;width:0.42727272727272725%;background:#3DB86A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#3DB86A;font-weight:600">4 мин</span>
+        <div style="height:16px;width:0.43%;background:var(--green);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--green);font-weight:700">4 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Мария Гусакова</div>
-        <div style="height:16px;width:2.0854545454545454%;background:#3DB86A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#3DB86A;font-weight:600">19 мин</span>
+        <div style="height:16px;width:2.09%;background:var(--green);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--green);font-weight:700">19 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Марина Колесниченко</div>
-        <div style="height:16px;width:2.0745454545454547%;background:#3DB86A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#3DB86A;font-weight:600">19 мин</span>
+        <div style="height:16px;width:2.07%;background:var(--green);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--green);font-weight:700">19 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Елена Исаченко</div>
-        <div style="height:16px;width:3.581818181818182%;background:#E8913A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#E8913A;font-weight:600">33 мин</span>
+        <div style="height:16px;width:3.58%;background:var(--orange);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--orange);font-weight:700">33 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Татьяна Жорина</div>
-        <div style="height:16px;width:4.029090909090909%;background:#E8913A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#E8913A;font-weight:600">37 мин</span>
+        <div style="height:16px;width:4.03%;background:var(--orange);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--orange);font-weight:700">37 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Yulia Votyakova</div>
-        <div style="height:16px;width:4.065454545454545%;background:#E8913A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#E8913A;font-weight:600">37 мин</span>
+        <div style="height:16px;width:4.07%;background:var(--orange);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--orange);font-weight:700">37 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Мария Дрожилина</div>
-        <div style="height:16px;width:4.223636363636364%;background:#E8913A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#E8913A;font-weight:600">39 мин</span>
+        <div style="height:16px;width:4.22%;background:var(--orange);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--orange);font-weight:700">39 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Кристина Вольнова</div>
-        <div style="height:16px;width:5.669090909090909%;background:#E8913A;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#E8913A;font-weight:600">52 мин</span>
+        <div style="height:16px;width:5.67%;background:var(--orange);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--orange);font-weight:700">52 мин</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Наталья Сулейманова</div>
-        <div style="height:16px;width:48.73636363636364%;background:#D44040;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#D44040;font-weight:600">7.4 ч</span>
+        <div style="height:16px;width:48.7%;background:var(--red);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--red);font-weight:700">7.4 ч</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Надежда Алейникова</div>
-        <div style="height:16px;width:99.08181818181818%;background:#D44040;border-radius:4px;min-width:20px"></div>
-        <span style="margin-left:6px;font-size:11px;color:#D44040;font-weight:600">15.1 ч</span>
+        <div style="height:16px;width:99.1%;background:var(--red);border-radius:6px;min-width:20px"></div>
+        <span style="margin-left:6px;font-size:11px;color:var(--red);font-weight:700">15.1 ч</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Ксения Семёнова</div>
-        <div style="height:16px;width:100%;background:#8B0000;border-radius:4px;min-width:20px;opacity:0.4"></div>
-        <span style="margin-left:6px;font-size:11px;color:#8B0000;font-weight:600">НЕТ ОТВЕТА</span>
+        <div style="height:16px;width:100%;background:#8B0000;border-radius:6px;min-width:20px;opacity:0.5"></div>
+        <span style="margin-left:6px;font-size:11px;color:#8B0000;font-weight:700">НЕТ ОТВЕТА</span>
     </div><div style="display:flex;align-items:center;margin:3px 0">
         <div style="width:160px;font-size:11px;text-align:right;padding-right:8px;color:var(--text2)">Алиса Алисова</div>
-        <div style="height:16px;width:100%;background:#8B0000;border-radius:4px;min-width:20px;opacity:0.4"></div>
-        <span style="margin-left:6px;font-size:11px;color:#8B0000;font-weight:600">НЕТ ОТВЕТА</span>
+        <div style="height:16px;width:100%;background:#8B0000;border-radius:6px;min-width:20px;opacity:0.5"></div>
+        <span style="margin-left:6px;font-size:11px;color:#8B0000;font-weight:700">НЕТ ОТВЕТА</span>
     </div>
         <div class="insight-warn" style="margin-top:8px;font-size:12px">
             Медиана: <b>37 мин</b>. 5 из 15 ответили менее 5 мин, 3 — более 1 часа.
@@ -446,40 +463,40 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
     <div style="display:flex;gap:16px;margin:16px 0;align-items:flex-end;height:180px">
 
     <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-        <div style="font-size:20px;font-weight:700;color:#3DB86A">100%</div>
-        <div style="width:80%;height:160.0px;background:#3DB86A;border-radius:6px 6px 0 0;margin-top:4px"></div>
-        <div style="font-size:10px;color:var(--text2);text-align:center;margin-top:6px">Короткие (< 100 символов)<br>(24 пар)</div>
+        <div style="font-size:20px;font-weight:800;color:var(--green)">100%</div>
+        <div style="width:80%;height:160px;background:var(--green);border-radius:10px 10px 0 0;margin-top:4px"></div>
+        <div style="font-size:10px;color:var(--text2);text-align:center;margin-top:6px">Короткие (&lt; 100 символов)<br>(24 пар)</div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-        <div style="font-size:20px;font-weight:700;color:#4ACAC0">90%</div>
-        <div style="width:80%;height:144.0px;background:#4ACAC0;border-radius:6px 6px 0 0;margin-top:4px"></div>
+        <div style="font-size:20px;font-weight:800;color:var(--cyan)">90%</div>
+        <div style="width:80%;height:144px;background:var(--cyan);border-radius:10px 10px 0 0;margin-top:4px"></div>
         <div style="font-size:10px;color:var(--text2);text-align:center;margin-top:6px">Средние (100-300)<br>(20 пар)</div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-        <div style="font-size:20px;font-weight:700;color:#E8913A">100%</div>
-        <div style="width:80%;height:160.0px;background:#E8913A;border-radius:6px 6px 0 0;margin-top:4px"></div>
+        <div style="font-size:20px;font-weight:800;color:var(--orange)">100%</div>
+        <div style="width:80%;height:160px;background:var(--orange);border-radius:10px 10px 0 0;margin-top:4px"></div>
         <div style="font-size:10px;color:var(--text2);text-align:center;margin-top:6px">Длинные (300-600)<br>(4 пар)</div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-        <div style="font-size:20px;font-weight:700;color:#D44040">100%</div>
-        <div style="width:80%;height:160.0px;background:#D44040;border-radius:6px 6px 0 0;margin-top:4px"></div>
-        <div style="font-size:10px;color:var(--text2);text-align:center;margin-top:6px">Огромные (> 600)<br>(3 пар)</div>
+        <div style="font-size:20px;font-weight:800;color:var(--red)">100%</div>
+        <div style="width:80%;height:160px;background:var(--red);border-radius:10px 10px 0 0;margin-top:4px"></div>
+        <div style="font-size:10px;color:var(--text2);text-align:center;margin-top:6px">Огромные (&gt; 600)<br>(3 пар)</div>
     </div></div>
     <table style="margin-top:12px">
         <tr><th>Длина</th><th>Пар</th><th>Ответили</th><th>% ответа</th><th>Медиана задержки</th></tr>
 
-        <tr><td><span class="tag" style="background:#3DB86A22;color:#3DB86A">Короткие (< 100 символов)</span></td>
+        <tr><td><span class="tag" style="background:rgba(52,176,106,0.1);color:var(--green)">Короткие (&lt; 100 символов)</span></td>
         <td>24</td><td>24</td>
-        <td style="font-weight:700;color:#3DB86A">100%</td><td>2 мин</td></tr>
-        <tr><td><span class="tag" style="background:#4ACAC022;color:#4ACAC0">Средние (100-300)</span></td>
+        <td style="font-weight:700;color:var(--green)">100%</td><td>2 мин</td></tr>
+        <tr><td><span class="tag" style="background:rgba(43,181,176,0.1);color:var(--cyan)">Средние (100-300)</span></td>
         <td>20</td><td>18</td>
-        <td style="font-weight:700;color:#4ACAC0">90%</td><td>5 мин</td></tr>
-        <tr><td><span class="tag" style="background:#E8913A22;color:#E8913A">Длинные (300-600)</span></td>
+        <td style="font-weight:700;color:var(--cyan)">90%</td><td>5 мин</td></tr>
+        <tr><td><span class="tag" style="background:rgba(232,145,58,0.1);color:var(--orange)">Длинные (300-600)</span></td>
         <td>4</td><td>4</td>
-        <td style="font-weight:700;color:#E8913A">100%</td><td>37 мин</td></tr>
-        <tr><td><span class="tag" style="background:#D4404022;color:#D44040">Огромные (> 600)</span></td>
+        <td style="font-weight:700;color:var(--orange)">100%</td><td>37 мин</td></tr>
+        <tr><td><span class="tag" style="background:rgba(224,64,64,0.1);color:var(--red)">Огромные (&gt; 600)</span></td>
         <td>3</td><td>3</td>
-        <td style="font-weight:700;color:#D44040">100%</td><td>1.9 ч</td></tr>
+        <td style="font-weight:700;color:var(--red)">100%</td><td>1.9 ч</td></tr>
     </table>
 </div>
 
@@ -511,7 +528,7 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
     </div>
     <table>
         <tr><th>Диалог</th><th>Сообщ.</th><th>Символов</th><th>Ответ</th></tr>
-<tr><td>Надежда Алейникова</td><td style="text-align:center">4</td><td style="text-align:center;font-weight:700;color:var(--red)">1400</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Оксана Дюбкова</td><td style="text-align:center">6</td><td style="text-align:center;font-weight:700;color:var(--red)">712</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Infinitive Summer-Camp</td><td style="text-align:center">5</td><td style="text-align:center;font-weight:700;color:var(--red)">698</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Yulia Votyakova</td><td style="text-align:center">6</td><td style="text-align:center;font-weight:700;color:var(--red)">433</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Наталья Сулейманова</td><td style="text-align:center">5</td><td style="text-align:center;font-weight:700;color:var(--red)">291</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Екатерина Барышникова</td><td style="text-align:center">3</td><td style="text-align:center;font-weight:700;color:var(--red)">81</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr style="background:rgba(61,184,106,0.05)"><td>Олег Пятаев</td><td style="text-align:center">3</td><td style="text-align:center;color:var(--green)">306</td><td><span class="tag tag-green">14 сек</span> <span style="font-size:11px;color:var(--text2)">Да, давайте 89218615123</span></td></tr><tr style="background:rgba(61,184,106,0.05)"><td>Екатерина Барышникова</td><td style="text-align:center">2</td><td style="text-align:center;color:var(--green)">59</td><td><span class="tag tag-green">18 сек</span> <span style="font-size:11px;color:var(--text2)">Хорошо спасибо большое</span></td></tr><tr style="background:rgba(61,184,106,0.05)"><td>Татьяна Жорина</td><td style="text-align:center">2</td><td style="text-align:center;color:var(--green)">167</td><td><span class="tag tag-green">20 сек</span> <span style="font-size:11px;color:var(--text2)">8921408-64-73</span></td></tr><tr style="background:rgba(61,184,106,0.05)"><td>Олег Пятаев</td><td style="text-align:center">3</td><td style="text-align:center;color:var(--green)">103</td><td><span class="tag tag-green">24 сек</span> <span style="font-size:11px;color:var(--text2)">Да)</span></td></tr>
+<tr><td>Надежда Алейникова</td><td style="text-align:center">4</td><td style="text-align:center;font-weight:700;color:var(--red)">1400</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Оксана Дюбкова</td><td style="text-align:center">6</td><td style="text-align:center;font-weight:700;color:var(--red)">712</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Infinitive Summer-Camp</td><td style="text-align:center">5</td><td style="text-align:center;font-weight:700;color:var(--red)">698</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Yulia Votyakova</td><td style="text-align:center">6</td><td style="text-align:center;font-weight:700;color:var(--red)">433</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Наталья Сулейманова</td><td style="text-align:center">5</td><td style="text-align:center;font-weight:700;color:var(--red)">291</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr><td>Екатерина Барышникова</td><td style="text-align:center">3</td><td style="text-align:center;font-weight:700;color:var(--red)">81</td><td><span class="tag tag-red">МОЛЧАНИЕ</span></td></tr><tr style="background:rgba(52,176,106,0.04)"><td>Олег Пятаев</td><td style="text-align:center">3</td><td style="text-align:center;color:var(--green)">306</td><td><span class="tag tag-green">14 сек</span> <span style="font-size:11px;color:var(--text2)">Да, давайте 89218615123</span></td></tr><tr style="background:rgba(52,176,106,0.04)"><td>Екатерина Барышникова</td><td style="text-align:center">2</td><td style="text-align:center;color:var(--green)">59</td><td><span class="tag tag-green">18 сек</span> <span style="font-size:11px;color:var(--text2)">Хорошо спасибо большое</span></td></tr><tr style="background:rgba(52,176,106,0.04)"><td>Татьяна Жорина</td><td style="text-align:center">2</td><td style="text-align:center;color:var(--green)">167</td><td><span class="tag tag-green">20 сек</span> <span style="font-size:11px;color:var(--text2)">8921408-64-73</span></td></tr><tr style="background:rgba(52,176,106,0.04)"><td>Олег Пятаев</td><td style="text-align:center">3</td><td style="text-align:center;color:var(--green)">103</td><td><span class="tag tag-green">24 сек</span> <span style="font-size:11px;color:var(--text2)">Да)</span></td></tr>
     </table>
 </div>
 
@@ -559,7 +576,7 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
 <div class="card">
     <div class="grid2">
         <div>
-            <div style="color:var(--red);font-weight:600;font-size:13px;margin-bottom:8px">Плохо: серия без паузы</div>
+            <div style="color:var(--red);font-weight:700;font-size:13px;margin-bottom:8px">Плохо: серия без паузы</div>
             <div class="quote" style="border-color:var(--red);font-size:12px;font-style:normal">
                 «Репино и Золотая Долина вполне подойдет. В Репино 40 детей, в ЗД 26...
                 Всё зависит от бюджета... Можете оставить контакт...»<br>
@@ -568,7 +585,7 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
             </div>
         </div>
         <div>
-            <div style="color:var(--green);font-weight:600;font-size:13px;margin-bottom:8px">Хорошо: диалог</div>
+            <div style="color:var(--green);font-weight:700;font-size:13px;margin-bottom:8px">Хорошо: диалог</div>
             <div class="quote" style="border-color:var(--green);font-size:12px;font-style:normal">
                 «Могу позвонить рассказать, удобно?» — «Да, 89218615123» — «Через 3-5 мин наберу, ок?» — «Да)»<br>
                 <b style="color:var(--green)">→ 13-40 знаков → ответ за 14 сек</b>
@@ -588,24 +605,24 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
 <div class="card" style="margin-top:12px">
     <h3>Эталонные диалоги</h3>
 
-    <div style="margin:8px 0;padding:8px 12px;background:var(--card2);border-radius:8px">
-        <b style="color:var(--green)">Олег Пятаев</b> <span class="temp-badge temp-warm" style="font-size:10px;padding:2px 8px">ТЁПЛЫЙ</span> 
+    <div style="margin:8px 0;padding:10px 14px;background:var(--card2);border-radius:10px">
+        <b style="color:var(--green)">Олег Пятаев</b> <span class="temp-badge temp-warm" style="font-size:10px;padding:2px 8px">ТЁПЛЫЙ</span>
         <div style="color:var(--text2);font-size:13px;margin-top:4px">Ответ 2 мин. Хвойный→Пионер. Звонок. Возражения о возврате при болезни — отработаны детально.</div>
     </div>
-    <div style="margin:8px 0;padding:8px 12px;background:var(--card2);border-radius:8px">
-        <b style="color:var(--green)">Екатерина Барышникова</b> <span class="temp-badge temp-warm" style="font-size:10px;padding:2px 8px">ТЁПЛЫЙ</span> 
+    <div style="margin:8px 0;padding:10px 14px;background:var(--card2);border-radius:10px">
+        <b style="color:var(--green)">Екатерина Барышникова</b> <span class="temp-badge temp-warm" style="font-size:10px;padding:2px 8px">ТЁПЛЫЙ</span>
         <div style="color:var(--text2);font-size:13px;margin-top:4px">37 сообщений. Подбор группы, расписание, пробный урок → оплата 19 750₽. Эталон.</div>
     </div>
-    <div style="margin:8px 0;padding:8px 12px;background:var(--card2);border-radius:8px">
-        <b style="color:var(--green)">Мария Дрожилина</b> 
+    <div style="margin:8px 0;padding:10px 14px;background:var(--card2);border-radius:10px">
+        <b style="color:var(--green)">Мария Дрожилина</b>
         <div style="color:var(--text2);font-size:13px;margin-top:4px">Подробные ответы на все вопросы. «Всё понравилось!» — ближайший к конверсии холодный лид.</div>
     </div>
-    <div style="margin:8px 0;padding:8px 12px;background:var(--card2);border-radius:8px">
-        <b style="color:var(--green)">Галина Широбокова</b> 
+    <div style="margin:8px 0;padding:10px 14px;background:var(--card2);border-radius:10px">
+        <b style="color:var(--green)">Галина Широбокова</b>
         <div style="color:var(--text2);font-size:13px;margin-top:4px">Follow-up 24.02. Запрос ОС при отказе. Получена причина: бюджет. Закрытие с открытой дверью.</div>
     </div>
-    <div style="margin:8px 0;padding:8px 12px;background:var(--card2);border-radius:8px">
-        <b style="color:var(--green)">Елена Исаченко</b> 
+    <div style="margin:8px 0;padding:10px 14px;background:var(--card2);border-radius:10px">
+        <b style="color:var(--green)">Елена Исаченко</b>
         <div style="color:var(--text2);font-size:13px;margin-top:4px">Follow-up → ОС → «забронировали в другом лагере». Конкурентная разведка.</div>
     </div></div>
 <h2 id="s11">11. Открытые вопросы и закрытие</h2>
@@ -939,7 +956,13 @@ svg text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
     </div>
 </div>
 
-<div style="text-align:center;color:var(--text2);font-size:12px;margin-top:40px;padding:20px">
+<div style="text-align:center;color:var(--text3);font-size:12px;margin-top:40px;padding:20px;border-top:1px solid var(--border)">
+    <div class="logo" style="display:inline-block;margin-bottom:8px">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" style="height:28px;opacity:0.5">
+            <text x="0" y="28" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="800" font-size="30" fill="#735DFF" letter-spacing="3">ESPACE</text>
+            <text x="0" y="45" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="600" font-size="14" fill="#735DFF" letter-spacing="6" opacity="0.7">AGENCY</text>
+        </svg>
+    </div><br>
     Отчёт v2.1 | 4 марта 2026 | Infinitive Camp (VK ID 147754577) | VK Messages API | Корректировка по cross-check с ChatGPT
 </div>
 </div></body></html>
